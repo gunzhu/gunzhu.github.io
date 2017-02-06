@@ -8,19 +8,21 @@
   <link rel="dns-prefetch" href="http://yoursite.com">
   <title>一只小白的博客建立心得 | blog of gunzhu</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="我们还在这样的世上活着；我也早觉得有写一点东西的必要了。离大年初一也已有一个多星期，忘却的许多事快要降临了罢，我正有写一点东西的必要了。
+  <meta name="description" content="##引言　　我们还在这样的世上活着；我也早觉得有写一点东西的必要了。离大年初一也已有一个多星期，忘却的许多事快要降临了罢，我正有写一点东西的必要了。
 　　建立个人博客的原因有很多。可以页面更自由、更独立啦；交互性较强啦；最重要的是对自己的错误总结以及知识积累啦；好吧，我承认是为了装逼。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="一只小白的博客建立心得">
 <meta property="og:url" content="http://yoursite.com/2017/02/05/个人博客的建立/index.html">
 <meta property="og:site_name" content="blog of gunzhu">
-<meta property="og:description" content="我们还在这样的世上活着；我也早觉得有写一点东西的必要了。离大年初一也已有一个多星期，忘却的许多事快要降临了罢，我正有写一点东西的必要了。
+<meta property="og:description" content="##引言　　我们还在这样的世上活着；我也早觉得有写一点东西的必要了。离大年初一也已有一个多星期，忘却的许多事快要降临了罢，我正有写一点东西的必要了。
 　　建立个人博客的原因有很多。可以页面更自由、更独立啦；交互性较强啦；最重要的是对自己的错误总结以及知识积累啦；好吧，我承认是为了装逼。">
-<meta property="og:updated_time" content="2017-02-05T15:33:23.991Z">
+<meta property="og:image" content="http://okvrogls4.bkt.clouddn.com/%E9%B2%81%E8%BF%85.jpg">
+<meta property="og:updated_time" content="2017-02-06T03:30:38.514Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="一只小白的博客建立心得">
-<meta name="twitter:description" content="我们还在这样的世上活着；我也早觉得有写一点东西的必要了。离大年初一也已有一个多星期，忘却的许多事快要降临了罢，我正有写一点东西的必要了。
+<meta name="twitter:description" content="##引言　　我们还在这样的世上活着；我也早觉得有写一点东西的必要了。离大年初一也已有一个多星期，忘却的许多事快要降临了罢，我正有写一点东西的必要了。
 　　建立个人博客的原因有很多。可以页面更自由、更独立啦；交互性较强啦；最重要的是对自己的错误总结以及知识积累啦；好吧，我承认是为了装逼。">
+<meta name="twitter:image" content="http://okvrogls4.bkt.clouddn.com/%E9%B2%81%E8%BF%85.jpg">
   
     <link rel="alternative" href="/atom.xml" title="blog of gunzhu" type="application/atom+xml">
   
@@ -176,10 +178,10 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>　　我们还在这样的世上活着；我也早觉得有写一点东西的必要了。离大年初一也已有一个多星期，忘却的许多事快要降临了罢，我正有写一点东西的必要了。</p>
+        <p><img src="http://okvrogls4.bkt.clouddn.com/%E9%B2%81%E8%BF%85.jpg" alt="">  </p>
+<p>##引言<br>　　我们还在这样的世上活着；我也早觉得有写一点东西的必要了。离大年初一也已有一个多星期，忘却的许多事快要降临了罢，我正有写一点东西的必要了。</p>
 <p>　　建立个人博客的原因有很多。可以页面更自由、更独立啦；交互性较强啦；最重要的是对自己的错误总结以及知识积累啦；好吧，我承认是为了装逼。  </p>
 <a id="more"></a>
-<p>　　这次的经验主要参考于于郭神推荐的一篇博客：<a href="http://blog.csdn.net/gdutxiaoxu/article/details/53576018" target="_blank" rel="external">手把手教你用hexo+github搭建属于自己的博客</a></p>
 <h2 id="自结干货"><a href="#自结干货" class="headerlink" title="自结干货"></a>自结干货</h2><p>###1. 环境搭建</p>
 <ul>
 <li><p>node.js下载及安装</p>
@@ -203,8 +205,27 @@
 </ul>
 <p>###3.上传本地配置</p>
 <ul>
-<li>Deployment配置</li>
+<li>Deployment配置    </li>
 </ul>
+<!--lang:java-->
+<pre><code>deploy:
+ dype:git
+ repo:git@github.com:yourname/yourname.github.io.git   
+ branch:master
+</code></pre><blockquote>
+<p>repo指向的是你的仓库地址，可在你的仓库中直接复制</p>
+</blockquote>
+<ul>
+<li><p>书写一篇新的博客<br>利用命令<code>hexo new post&quot;your title&quot;</code>新建一篇博客 </p>
+<p>到hexo\source_posts下编译你的 article title.md 文件  </p>
+<blockquote>
+<p>一般使用markdown编译器来编译</p>
+</blockquote>
+<p>可以先用<code>hexo s</code>命令在<a href="http://0.0.0.0:4000/" target="_blank" rel="external">http://0.0.0.0:4000/</a>，本地检阅一下效果</p>
+<p>满意后，再生成<code>hexo g</code>,部署<code>hexo d</code>,就可以到<a href="http://yourname.github.io" target="_blank" rel="external">http://yourname.github.io</a>浏览了</p>
+</li>
+</ul>
+<p>##参考资料<br>　　这次的经验主要参考于郭神推荐的一篇博客：<a href="http://blog.csdn.net/gdutxiaoxu/article/details/53576018" target="_blank" rel="external">手把手教你用hexo+github搭建属于自己的博客</a></p>
 
       
 
@@ -324,6 +345,7 @@
   
     <div class="duoshuo"></div>
   
+
 
 
 
