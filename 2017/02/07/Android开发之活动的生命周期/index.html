@@ -6,17 +6,21 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Tag: 小白 | blog of gunzhu</title>
+  <title>Android开发之活动的生命周期 | blog of gunzhu</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="bla~bla ~bla..">
-<meta property="og:type" content="website">
-<meta property="og:title" content="blog of gunzhu">
-<meta property="og:url" content="http://yoursite.com/tags/小白/index.html">
+  <meta name="description" content="春天不是读书天：关在堂前，闷短寿缘！春天不是读书天：舞雩风前，恍若神仙。春天不是读书天：之乎者焉，太讨人嫌！春天不是读书天：书里流连，非呆即癫。春夏秋冬，我呆我颠。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Android开发之活动的生命周期">
+<meta property="og:url" content="http://yoursite.com/2017/02/07/Android开发之活动的生命周期/index.html">
 <meta property="og:site_name" content="blog of gunzhu">
-<meta property="og:description" content="bla~bla ~bla..">
+<meta property="og:description" content="春天不是读书天：关在堂前，闷短寿缘！春天不是读书天：舞雩风前，恍若神仙。春天不是读书天：之乎者焉，太讨人嫌！春天不是读书天：书里流连，非呆即癫。春夏秋冬，我呆我颠。">
+<meta property="og:image" content="http://okvrogls4.bkt.clouddn.com/%E6%98%A5%E5%A4%A9%E2%80%98.jpg">
+<meta property="og:image" content="http://okvrogls4.bkt.clouddn.com/%E6%B4%BB%E5%8A%A8%E7%94%9F%E5%AD%98%E6%9C%9F.jpg">
+<meta property="og:updated_time" content="2017-02-07T12:32:01.641Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="blog of gunzhu">
-<meta name="twitter:description" content="bla~bla ~bla..">
+<meta name="twitter:title" content="Android开发之活动的生命周期">
+<meta name="twitter:description" content="春天不是读书天：关在堂前，闷短寿缘！春天不是读书天：舞雩风前，恍若神仙。春天不是读书天：之乎者焉，太讨人嫌！春天不是读书天：书里流连，非呆即癫。春夏秋冬，我呆我颠。">
+<meta name="twitter:image" content="http://okvrogls4.bkt.clouddn.com/%E6%98%A5%E5%A4%A9%E2%80%98.jpg">
   
     <link rel="alternative" href="/atom.xml" title="blog of gunzhu" type="application/atom+xml">
   
@@ -144,64 +148,265 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-Android开发之活动的生命周期" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2017" class="archive-year">2017</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/02/05/个人博客的建立/" class="archive-article-date">
-  	<time datetime="2017-02-05T01:57:35.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-02-05</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/02/05/个人博客的建立/">一只小白的博客建立心得</a>
+    <h1 class="article-title" itemprop="name">
+      Android开发之活动的生命周期
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
+        
+        <a href="/2017/02/07/Android开发之活动的生命周期/" class="archive-article-date">
+  	<time datetime="2017-02-07T01:56:35.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-02-07</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><img src="http://okvrogls4.bkt.clouddn.com/%E6%98%A5%E5%A4%A9%E2%80%98.jpg" alt=""></p>
+<p>春天不是读书天：关在堂前，闷短寿缘！<br>春天不是读书天：舞雩风前，恍若神仙。<br>春天不是读书天：之乎者焉，太讨人嫌！<br>春天不是读书天：书里流连，非呆即癫。<br>春夏秋冬，我呆我颠。</p>
+<a id="more"></a>
+<h1 id="活动的生命周期"><a href="#活动的生命周期" class="headerlink" title="活动的生命周期"></a>活动的生命周期</h1><blockquote>
+<p>活动生命周期对任何Android开发都很重要，当深入理解过后，能更合理的管理应用资源，会拥有更流畅贯通的用户体验。  </p>
+</blockquote>
+<h2 id="1-返回栈"><a href="#1-返回栈" class="headerlink" title="1.返回栈"></a>1.返回栈</h2><blockquote>
+<p>Android中的活动层叠存放在返回栈中。启动一个活动，这个活动入栈，并处于栈顶。销毁一个活动，活动出栈，前一个活动处于栈顶。系统会显示处于栈顶的活动。</p>
+</blockquote>
+<h2 id="2-活动状态"><a href="#2-活动状态" class="headerlink" title="2.活动状态"></a>2.活动状态</h2><ul>
+<li>运行状态  </li>
+</ul>
+<blockquote>
+<p>当一个活动处于栈顶时，活动就处于运行状态，系统最不愿回收运行状态的活动，会带来很差的用户体验  </p>
+</blockquote>
+<ul>
+<li>暂停状态</li>
+</ul>
+<blockquote>
+<p>1.当一个活动不再处于栈顶，但任然可见，这时活动处于暂停状态。<br>2.不是所有的活动都占满整个屏幕的，例如一个活动只占了一半屏幕，你人可以看见后面的的活动，这种活动是完全存活的，系统也不会愿意回收。</p>
+</blockquote>
+<ul>
+<li>停止状态</li>
+</ul>
+<blockquote>
+<p>活动不再处于栈顶，也不可见。这时活动处于停止状态。系统仍会为其保存状态及变量，必要时可能会回收。</p>
+</blockquote>
+<ul>
+<li>销毁状态</li>
+</ul>
+<blockquote>
+<p>活动从返回栈中移除后变成销毁状态，系统会倾向于回收销毁状态的活动，以保证内存充足。</p>
+</blockquote>
+<h2 id="3-活动的生存期"><a href="#3-活动的生存期" class="headerlink" title="3.活动的生存期"></a>3.活动的生存期</h2><ul>
+<li>完整生存期</li>
+</ul>
+<blockquote>
+<p>活动在 onCreate() 方法和 onDestroy() 方法之间所经历的，就是完整生存期。一般情况下，一个活动会在 onCreate() 方法中完成各种初始化操作，而在 onDestroy() 方法中完成释放内存的操作。</p>
+</blockquote>
+<ul>
+<li>可见生存期</li>
+</ul>
+<blockquote>
+<p>活动在 onStart() 方法和 onStop() 方法之间所经历的，就是可见生存期。在可见生存期内，活动对于用户总是可见的，即便有可能无法和用户进行交互。我们可以通过这两个方法，合理地管理那些对用户可见的资源。比如在 onStart() 方法中对资源进行加载，而在 onStop() 方法中对资源进行释放，从而保证处于停止状态的活动不会占用过多内存。</p>
+</blockquote>
+<ul>
+<li>前台生存期</li>
+</ul>
+<blockquote>
+<p>活动在 onResume() 方法和 onPause() 方法之间所经历的，就是前台生存期。在前台生存期内，活动总是处于运行状态的，此时的活动是可以和用户进行相互的，我们平时看到和接触最多的也这个状态下的活动。</p>
+</blockquote>
+<ul>
+<li>onRestart()</li>
+</ul>
+<blockquote>
+<p>这个方法在活动由停止状态变为运行状态之前调用，也就是活动被重新启动了。</p>
+</blockquote>
+<h2 id="4-官方图示"><a href="#4-官方图示" class="headerlink" title="4.官方图示"></a>4.官方图示</h2><p><img src="http://okvrogls4.bkt.clouddn.com/%E6%B4%BB%E5%8A%A8%E7%94%9F%E5%AD%98%E6%9C%9F.jpg" alt=""></p>
+<h2 id="实例"><a href="#实例" class="headerlink" title="实例"></a>实例</h2><blockquote>
+<p>首先关闭原有项目，然后新建LifeCycleTest项目。并且允许ADT帮我们自动创建活动，创建的活动名和布局名都使用默认值。还需要分别再创建两个子活动，NormalActivity和<br>DialogActivity。</p>
+</blockquote>
+<p>新建 normal_layout.xml 文件:</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">&lt;LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"  </div><div class="line">android:layout_width="match_parent"  </div><div class="line">android:layout_height="match_parent"  </div><div class="line">android:orientation="vertical" &gt;    </div><div class="line">&lt;TextView  </div><div class="line">android:layout_width="match_parent"   </div><div class="line">android:layout_height="wrap_content"  </div><div class="line">android:text="This is a normal activity"/&gt;</div><div class="line">&lt;/LinearLayout&gt;</div></pre></td></tr></table></figure>
+<p>再新建一个 dialog_layout.xml 文件:</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">&lt;LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"  </div><div class="line">android:layout_width="match_parent" </div><div class="line">android:layout_height="match_parent" </div><div class="line">android:orientation="vertical" &gt;</div><div class="line">&lt;TextView  </div><div class="line">android:layout_width="match_parent"  </div><div class="line">android:layout_height="wrap_content"  </div><div class="line">android:text="This is a dialog activity"/&gt;</div><div class="line">&lt;/LinearLayout&gt;</div></pre></td></tr></table></figure>
+<p>再分别建立对应的活动NormalActivity和DialogActivity。在 AndroidManifest.xml的 &lt; activity &gt; 中添加代码，将出现的活动设成对话框：</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">&lt;activity   </div><div class="line">android:name=".NormalActivity" &gt;</div><div class="line">&lt;/activity&gt;</div><div class="line">&lt;activity  </div><div class="line">android:name=".DialogActivity"  </div><div class="line">android:theme="@android:style/Theme.Dialog" &gt;</div><div class="line">&lt;/activity&gt;</div></pre></td></tr></table></figure>
+<blockquote>
+<p>这里分别为两个活动进行注册，但是 DialogActivity 的注册代码有些不同，它使用了一个android:theme属性，这是用于给当前活动指定主题的，这里@android: style/Theme.Dialog 则毫无疑问是 让 DialogActivity 使用对话框式的主题。</p>
+</blockquote>
+<p>现在在activity_main.xml，重新定制我们主活动的布局：</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line">&lt;LinearLayout  </div><div class="line">xmlns:android="http://schemas.android.com/apk/res/android"  </div><div class="line">android:layout_width="match_parent"  </div><div class="line">android:layout_height="match_parent"  </div><div class="line">android:orientation="vertical" &gt;  </div><div class="line">&lt;Button  </div><div class="line">android:id="@+id/start_normal_activity"   </div><div class="line">android:layout_width="match_parent"  </div><div class="line">android:layout_height="wrap_content"  </div><div class="line">android:text="Start NormalActivity" /&gt;  </div><div class="line">&lt;Button  </div><div class="line">android:id="@+id/start_dialog_activity"   </div><div class="line">android:layout_width="match_parent"  </div><div class="line">android:layout_height="wrap_content"  </div><div class="line">android:text="Start DialogActivity" /&gt;</div><div class="line">&lt;/LinearLayout&gt;</div></pre></td></tr></table></figure>
+<blockquote>
+<p>加入了两个按钮，一个用于启动 NormalActivity，一个用于启动 DialogActivity。</p>
+</blockquote>
+<p>最后修改 MainActivity 中的代码：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">MainActivity</span> <span class="keyword">extends</span> <span class="title">Activity</span> </span>&#123;  </div><div class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> String TAG = <span class="string">"MainActivity"</span>;</div><div class="line"><span class="meta">@Override</span></div><div class="line"><span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">onCreate</span><span class="params">(Bundle savedInstanceState)</span> </span>&#123;</div><div class="line"><span class="keyword">super</span>.onCreate(savedInstanceState);  </div><div class="line">Log.d(TAG, <span class="string">"onCreate"</span>);  </div><div class="line">requestWindowFeature(Window.FEATURE_NO_TITLE);  </div><div class="line">setContentView(R.layout.activity_main);</div><div class="line">Button startNormalActivity = (Button) findViewById(R.id.start_normal_activity);</div><div class="line">Button startDialogActivity = (Button) findViewById(R.id.start_dialog_activity);</div><div class="line">startNormalActivity.setOnClickListener(<span class="keyword">new</span> OnClickListener() &#123;</div><div class="line"><span class="meta">@Override</span></div><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onClick</span><span class="params">(View v)</span> </span>&#123;</div><div class="line">Intent intent = <span class="keyword">new</span> Intent(MainActivity.<span class="keyword">this</span>, NormalActivity.class);</div><div class="line">startActivity(intent);</div><div class="line">&#125;</div><div class="line">&#125;);</div><div class="line">startDialogActivity.setOnClickListener(<span class="keyword">new</span> OnClickListener() &#123;</div><div class="line"><span class="meta">@Override</span></div><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onClick</span><span class="params">(View v)</span> </span>&#123;</div><div class="line">Intent intent = <span class="keyword">new</span> Intent(MainActivity.<span class="keyword">this</span>, DialogActivity.class);</div><div class="line">startActivity(intent);</div><div class="line">&#125;</div><div class="line">&#125;);</div><div class="line">&#125;</div><div class="line"><span class="meta">@Override</span></div><div class="line"><span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">onStart</span><span class="params">()</span> </span>&#123;</div><div class="line"><span class="keyword">super</span>.onStart();  </div><div class="line">Log.d(TAG, <span class="string">"onStart"</span>);</div><div class="line">&#125;</div><div class="line"><span class="meta">@Override</span></div><div class="line"><span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">onResume</span><span class="params">()</span> </span>&#123;</div><div class="line"><span class="keyword">super</span>.onResume(); Log.d(TAG, <span class="string">"onResume"</span>);</div><div class="line">&#125;</div><div class="line"><span class="meta">@Override</span></div><div class="line"><span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">onPause</span><span class="params">()</span> </span>&#123;</div><div class="line"><span class="keyword">super</span>.onPause(); Log.d(TAG, <span class="string">"onPause"</span>);</div><div class="line">&#125;</div><div class="line"><span class="meta">@Override</span></div><div class="line"><span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">onStop</span><span class="params">()</span> </span>&#123;</div><div class="line"><span class="keyword">super</span>.onStop(); Log.d(TAG, <span class="string">"onStop"</span>);</div><div class="line">&#125;</div><div class="line"><span class="meta">@Override</span></div><div class="line"><span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">onDestroy</span><span class="params">()</span> </span>&#123;</div><div class="line"><span class="keyword">super</span>.onDestroy(); Log.d(TAG, <span class="string">"onDestroy"</span>);</div><div class="line">&#125;</div><div class="line"><span class="meta">@Override</span></div><div class="line"><span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">onRestart</span><span class="params">()</span> </span>&#123;</div><div class="line"><span class="keyword">super</span>.onRestart(); Log.d(TAG, <span class="string">"onRestart"</span>);</div><div class="line">&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<blockquote>
+<p>在 onCreate()方法中，我们分别为两个按钮注册了点击事件，点击第一个按钮会启动 NormalActivity，点击第二个按钮会启动 DialogActivity。然后在 Activity 的七个回调方法中 分别打印了一句话，这样就可以通过观察日志的方式来更直观地理解活动的生命周期。<br>可以通过logcat中的打印日志，观察结果，得到规律。</p>
+</blockquote>
+
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="http://okvrogls4.bkt.clouddn.com/%E6%94%AF%E4%BB%98%E5%AE%9D%E6%94%AF%E4%BB%98.jpg">
+                      <span class="reward-type">支付宝</span>
+                    </div>
+                    
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="http://okvrogls4.bkt.clouddn.com/%E5%BE%AE%E4%BF%A1.png">
+                      <span class="reward-type">微信</span>
+                    </div>
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">小白</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">春天</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">个人博客的搭建</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Android开发</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">活动生命周期</a>
         		</li>
       		
 		</ul>
 	</div>
 
-          
+      
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="http://s.jiathis.com/qrcode.php?url=http://yoursite.com/2017/02/07/Android开发之活动的生命周期/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
+  
+<nav id="article-nav">
   
   
-    </div></section>
+    <a href="/2017/02/05/个人博客的建立/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">一只小白的博客建立心得</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+
+
+
+
+  
+  <div class="duoshuo">
+	<!-- 多说评论框 start -->
+	<div class="ds-thread" data-thread-key="Android开发之活动的生命周期" data-title="Android开发之活动的生命周期" data-url="http://yoursite.com/2017/02/07/Android开发之活动的生命周期/"></div>
+	<!-- 多说评论框 end -->
+	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+	<script type="text/javascript">
+	var duoshuoQuery = {short_name:"true"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+	</script>
+	<!-- 多说公共JS代码 end -->
+</div>
+
   
 
-    
+
+
 
 
           </div>
@@ -224,9 +429,9 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
+		isPost: true,
 		isArchive: false,
-		isTag: true,
+		isTag: false,
 		isCategory: false,
 		open_in_new: true,
 		root: "/",
